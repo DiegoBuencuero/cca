@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    'receptor',
+    'monitoreo',
 ]
 
 MIDDLEWARE = [
@@ -45,7 +45,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "receptor/templates"],
+        'DIRS': [BASE_DIR / "monitoreo/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -88,14 +88,20 @@ LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
 
-# Estáticos y media (igual que oohcontroler)
+
+# Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 STATICFILES_DIRS = [
     BASE_DIR / "staticfiles",
 ]
+
+STATIC_ROOT = BASE_DIR / "static_root"
+
+# Media files (user uploads)
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+MEDIA_ROOT = BASE_DIR / "media"
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
